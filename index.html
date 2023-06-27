@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e1f5030e3f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Trucking industry</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        h3 {
+            font-weight: 700;
+            color: rgb(31, 6, 253);
+        }
+
+        h5 {
+            font-weight: 500;
+            color: rgb(39, 18, 230);
+        }
+
+        p {
+            font-weight: 700;
+            color: rgb(24, 24, 32);
+        }
+
+        .image1 {
+            background-image: url(img/kartarossii.jpg);
+            background-size:
+                cover;
+            background-position: center;
+            height: 25rem;
+            padding-top: 7rem;
+        }
+
+        .image2 {
+            background-image: url(img/pereezd.webp);
+            background-size: cover;
+            background-position: center;
+            height: 15rem;
+            padding-top: 15rem;
+        }
+
+        .image3 {
+            background-image: url(img/insure2.webp);
+            background-size: cover;
+            background-position: center;
+            height: 15rem;
+            padding-top: 15rem;
+
+        }
+
+        .image4 {
+            background-image: url(img/7.webp);
+            background-size: cover;
+            background-position: center;
+            height: 15rem;
+            padding-top: 15rem;
+        }
+
+        .main-form-btn {
+            color: white;
+            background-color: rgb(148, 141, 238);
+            border: rgb(34, 24, 131);
+        }
+
+        .main-form-btn:hover {
+            color: white;
+            background-color: rgb(137, 130, 238);
+            border: rgb(31, 21, 116);
+        }
+
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon {
+            width: 150px;
+            height: 25px;
+        }
+
+        .fa-solid,
+        .fa-regular {
+            background: -webkit-gradient(linear,
+                    left top,
+                    left bottom,
+                    from(rgb(65, 8, 36)),
+                    to(rgb(71, 30, 221)));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            height: 350px;
+        }
+
+        .text {
+            color: black;
+            font-weight: bolder;
+        }
+
+        .footer_logo {
+            margin-left: 3vh;
+            margin-top: 4vh;
+        }
+
+        .title {
+            font-size: 2rem;
+        }
+
+        .reviews-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .box1 {
+            align-items: center;
+            border: 1px solid darkgrey;
+            border-radius: 10px;
+            padding: 2rem;
+            background-color: beige;
+        }
+
+        .box1:hover {
+            filter: contrast(150%);
+            cursor: pointer;
+        }
+
+        .fa-star {
+            color: #aad436;
+        }
+
+        .modal-popup {
+            background-color: rgb(102, 173, 231);
+            margin: center;
+            margin-top: 3rem;
+            margin-left: 25rem;
+            min-width: 250px;
+            max-width: 250px;
+            position: fixed;
+            padding: 15px 15px;
+            display: none;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 7;
+            opacity: 0.9;
+        }
+
+        .popup-close {
+            font-size: 1rem;
+            position: relative;
+            right: 1px;
+        }
+
+        #mod {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!---Header start-->
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: rgb(60, 61, 77);">
+            <a class="navbar-brand" href="/project/"><img src="img/GLlogo.png" alt="" height="60px" width="80px"
+                    mt-5></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="/project/">Главная<span
+                                class="sr-only">(текущая)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#carouselExampleCaptions">О компании</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#advantages">Наши преимущества</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#price">Порядок работы и цены</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#reviews">Отзывы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact">Контакты</a>
+                    </li>
+                </ul>
+                <div class="form-group">
+                    <div class="text-center mt-3 text-white">
+                        <div class="phone1">
+                            <h6>8 (800) 234 23 24</h6>
+                            <span>(бесплатно для звонков из России)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Header end-->
+
+    <!--Carousel about Company start-->
+    <main>
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/trans.webp" class="d-block w-100" style="height: 550px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Грузовые перевозки по всей России и СНГ</h3>
+                        <h5>Автомобильные грузоперевозки с компанией «Global Logistic» — быстро, надежно,выгодно.
+                            Используем транспорт из собственного автопарка, привлекаем к сотрудничеству проверенных
+                            автоперевозчиков.</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/load.webp" class="d-block w-100" style="height: 550px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Погрузочно-разгрузочные работы</h3>
+                        <h5>Компания «Global Logistic» предоставляет крановую и иную спецтехнику для Вашего удобства.
+                        </h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/insur (1).webp" class="d-block w-100" style="height: 550px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Страхование груза</h3>
+                        <h5>Оформите страхование Вашего груза на выгодных условиях. Условия договоров страхования грузов
+                            «А-Страхование» отвечают современным требованиям, предъявляемым к страховому покрытию.</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/exped.webp" class="d-block w-100" style="height: 550px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Полное экспедирование</h3>
+                        <h5>За­казав эту услугу, Вы смо­жете быть спо­кой­ны за свое иму­щес­тво. Опыт­ные и
+                            про­фес­си­ональ­ные эк­спе­дито­ры сде­ла­ют все, что­бы ваш груз был дос­тавлен в
+                            це­лос­ти, сох­раннос­ти и за са­мые ми­нималь­ные сро­ки.</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Предыдущий</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Следующий</span>
+            </a>
+        </div>
+        <!--Carousel about Company end-->
+
+        <!---About Company start -->
+        <div class="container-fluid">
+            <div class="col-lg-8 mt-1">
+                <div class="image1">
+                    <div class="content">
+                        <h2>Доставка компанией «Global Logistic»</h2>
+                        <ul>
+                            <li class="text">По РФ и СНГ</li>
+                            <li class="text">Собственный автопарк</li>
+                            <li class="text">Короткие сроки доставки</li>
+                            <li class="text">Выгодные тарифы на перевозку</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5 bg-light shadow-lg">
+                <h4 class="text-sm-center">Свяжитесь с нами</h4>
+                <form class="col-12 mx-auto" onsubmit="sendForm(this); return false;">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="material-icons">
+                                    <i class="fa-solid fa-person"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control form-control-range" placeholder="Ваше имя"
+                            onfocus="this.placeholder =''" onblur="this.placeholder='Ваше имя'" required
+                            autocomplete="name" name="name" onkeydown="return alphaOnly(event);" />
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="material-icons"><i class="fa-solid fa-person"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control form-control-range" placeholder="Ваша фамилия"
+                            onfocus="this.placeholder =''" onblur="this.placeholder='Ваша фамилия'" required
+                            autocomplete="lastname" name="lastname" onkeydown="return alphaOnly(event);" />
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="material-icons">
+                                    <i class="fa-solid fa-envelope"></i></i>
+                                </span>
+                            </div>
+                        </div>
+                        <input type="e-mail" class="form-control form-control-range" placeholder="E-mail"
+                            onfocus="this.placeholder =''" onblur="this.placeholder='E-mail'" required
+                            autocomplete="E-mail" name="email" />
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="material-icons"><i class="fa-solid fa-square-phone"></i></span>
+                            </div>
+                        </div>
+                        <input type="tel" class="form-control form-control-range" placeholder="+7 (___)___-__-__"
+                            onfocus="this.placeholder =''" onblur="this.placeholder='+7 (___)___-__-__'" required
+                            autocomplete="phone" name="phone" />
+                    </div>
+                    <div class=" input-group mb-2">
+                        <div class="input-group-prepend"></div>
+                        <input type="text" class="form-control form-control-range" placeholder="Сообщение"
+                            onfocus="this.placeholder =''" onblur="this.placeholder='Сообщение'" autocomplete="sms"
+                            name="sms" />
+                    </div>
+                    <div class="form-check mb-2 mt-2 checkbox-form">
+                        <input class="form-check-input" type="checkbox" required autocomplete="off">
+                        <label class="form-check-label" for="inlineCheckbox1">Согласие на обработку персональных
+                            данных</label>
+                    </div>
+                    <p id="info" style="color: rgb(136, 85, 44); padding-left: 2.5rem;"></p>
+                    <input type="submit" value="Получить обратную связь"
+                        class="btn modal-btn btn-block main-form-btn btn-lg mt-2 p-1">
+                </form>
+            </div>
+        </div>
+        <!----About Company end -->
+
+        <!-- --modal start-->
+        <div class="popup-overlay"></div>
+        <div class="modal-popup" id="#mod">
+            <h2>Спасибо за обращение!</h2>
+            <p>Мы обязательно свяжемся с Вами в течение часа!</p>
+            <a href="#modal-close" class="popup-close">&times;</a>
+        </div>
+        <!----modal end -->
+
+        <!---advantages start-->
+        <div id="advantages">
+            <div class="title">
+                <p class="animate__animated animate__fadeInLeftBig animate__slow animate__repeat-1"
+                    style="padding-top: 5rem; color:rgb(59, 24, 124); text-align: center;">
+                    Мы не только хорошо знаем рынок логистических услуг, но и умеем правильно организовать все процессы:
+                </p>
+            </div>
+            <div class="box animate__animated animate__fadeInRightBig animate__slow animate__repeat-1">
+                <div class="center">
+                    <div class="icon">
+                        <i class="fa-solid fa-boxes-packing fa-5x" style="color: #3eacd0;"></i>
+                    </div>
+                    <p>Упаковка груза</p>
+                </div>
+                <div class="center">
+                    <div class="icon">
+                        <i class="fa-solid fa-truck-ramp-box fa-5x" style="color: #3eacd0;"></i>
+                    </div>
+                    <p>Погрузочно-разгрузочные работы</p>
+                </div>
+                <div class="center">
+                    <div class="icon">
+                        <i class="fa-solid fa-hand-holding-hand fa-5x" style="color: #3eacd0;"></i>
+                    </div>
+                    <p>Бережное отношение к грузу</p>
+                </div>
+                <div class="center">
+                    <div class="icon">
+                        <i class="fa-solid fa-file-shield fa-5x" style="color: #3eacd0;"></i>
+                    </div>
+                    <p>Страхование груза</p>
+                </div>
+                <div class="center">
+                    <div class="icon">
+                        <i class="fa-solid fa-binoculars fa-5x" style="color: #3eacd0;"></i>
+                    </div>
+                    <p>Учет и контроль движения груза</p>
+                </div>
+                <div class="center">
+                    <div class="icon">
+                        <i class="fa-solid fa-truck-fast fa-5x" style="color: #3eacd0;"></i>
+                    </div>
+                    <p>Быстрая доставка</p>
+                </div>
+            </div>
+        </div>
+        <!---advantages end-->
+
+        <!----card start-->
+        <!-- <p class="text-center">Дополнительные услуги "Global logistic":</p> -->
+        <div class="card-group">
+            <div class="card text-center">
+                <div class="image2 mb-4">
+                    <h5>Квартирные и офисные переезды</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Мы осуществляем квартирные, загородные, офисные и складские переезды под ключ.
+                        Переезд по всей территории России, Казахстана и Беларуси. Для нас важен каждый клиент: и семья,
+                        решившая переехать в другой город, и огромная торговая сеть.
+                    </p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="image3 mb-4">
+                    <h5>Страхование груза</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">"Global logistic" за безопасную перевозку грузов. Мы не только бережно
+                        транспортируем каждый груз, но и предлагаем вам воспользоваться услугами наших партнеров, чтобы
+                        обеспечить грузы надежной страховой защитой. Оформите страхование Вашего груза на выгодных
+                        условиях.
+                    </p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="image4 mb-2">
+                    <h5>Ответственное хранение</h5>
+                </div>
+                <div class="card-body" id="price">
+                    <ul>
+                        <li class="text">Сами заберем ваш груз</li>
+                        <li class="text">Примем и отсортируем ваш груз на наш склад</li>
+                        <li class="text">Выполним дополнительные работы при приемке и разместим на хранение</li>
+                        <li class="text">Пересоберем, переупакуем. Отгрузим или по расписанию переместим по всей стране
+                        </li>
+                        <li class="text">Сделаем конечную доставку до вашего клиента своим транспортом</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!----card end-->
+        <!----Price start -->
+        <div id="pricecalc">
+            <div class="container mt-5 mb-5 text-center">
+                <div class="heading">
+                    <h2>Рассчитать стоимость перевозки груза</h2>
+                    <h5>Для вашего удобства ниже представлена форма для расчета стоимости перевозки вашего
+                        груза</h5>
+                </div>
+                <div class="pricecalc-main">
+                    <form class="mt-5 mb-5 bg-light shadow-lg">
+                        <div class="row ml-4">
+                            <div class="col-xl-3 mt-4">
+                                <input type="text" class="form-control" id="weight" placeholder="Вес (кг)" required="">
+                            </div>
+                            <div class="col-xl-3 mt-4">
+                                <input type="text" id="volume" class="form-control" placeholder="Объем (куб²)"
+                                    required="">
+                            </div>
+                        </div>
+                        <div class="row ml-4">
+                            <div class="col-auto my-1 mt-2">
+                                <p>Тип кузова:</p>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Выбрать...</option>
+                                    <option value="1">Тентованный</option>
+                                    <option value="2">Рефрижератор</option>
+                                    <option value="3">Контейнер</option>
+                                    <option value="4">Фургон</option>
+                                </select>
+                            </div>
+                            <div class="col-auto my-1 mt-2">
+                                <p>Тип загрузки:</p>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Выбрать...</option>
+                                    <option value="1">Верхняя</option>
+                                    <option value="2">Задняя</option>
+                                    <option value="3">Боковая</option>
+                                </select>
+                            </div>
+                            <div class="col-auto my-1 mt-2">
+                                <p>Оплата:</p>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Выбрать...</option>
+                                    <option value="1">Наличные на выгрузке</option>
+                                    <option value="2"> С НДС</option>
+                                    <option value="3">Без НДС</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <div class="custom-control custom-checkbox row d-flex justify-content-center mb-3">
+                                <p>Дополнительные услуги:</p>
+                                <div class="col-md-3" style="visibility: visible;">
+                                    <input type="checkbox" id="load" class="custom-control-input">
+                                    <label class="custom-control-label" for="load">Нужна погрузка</label>
+                                </div>
+                                <div class="col-md-3" style="visibility: visible;">
+                                    <input type="checkbox" id="delivery" class="custom-control-input">
+                                    <label class="custom-control-label" for="delivery">Доставка до места</label>
+                                </div>
+                                <div class="col-md-3" style="visibility: visible;">
+                                    <input type="checkbox" id="danger" class="custom-control-input">
+                                    <label class="custom-control-label" for="danger">Опасный груз</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3 ">
+                            <div class="form-group col-md-12">
+                                <label for="range">Расстояние &nbsp;<span class="distant">0</span>
+                                    <span>км</span></label>
+                                <input type="range" class="custom-range" min="50" max="5000" step="50" id="range"
+                                    value="500">
+                            </div>
+                        </div>
+                        <div class="row col-12 mb-3 mt-2 ml-2"><span id="result">0.0</span> <span class="rub">₽</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-12  mb-3 ml-3">
+                                <input type="button" id="btn" class="btn-block btn btn-danger" value="Рассчитать">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!----Price end-->
+
+        <!---track the cargo start-->
+        <div id="track">
+            <div class="container  mt-5 mb-5 text-center">
+                <div class="head">
+                    <h2>Отследить местонахождение груза</h2>
+                    <h5>Введите, пожалуйста, номер груза и его ПИН-код.</h5>
+                </div>
+                <div class="track">
+                    <form class="mt-5 mb-5 bg-light shadow-lg">
+                        <div class="row ml-4 mb-3">
+                            <div class="col-xl-3 col-lg-6 mb-3 mt-3">
+                                <input type="text" class="form-control form-control-sm" placeholder="№ груза" required
+                                    name="number" />
+                            </div>
+                            <div class="col-xl-3 col-lg-6 mb-3 mt-3">
+                                <input type="text" class="form-control form-control-sm" placeholder="ПИН-код" required
+                                    name="code" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-12  mb-3 ml-3">
+                                <input type="submit" value="Отследить" class="btn btn-danger">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="res" id="res">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---track the cargo end -->
+
+        <!---reviews start-->
+        <div class="container mt-4" id="reviews">
+            <h2 class="text-center">Что говорят наши клиенты</h2>
+            <div class="reviews-row mt-4 mb-4">
+                <div class="col-3 box1">
+                    <p class="font-weight-bold mt-2">Олег Ш. &nbsp;
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </p>
+                    <p>Заказывал доставку мебели.<br> Остался доволен, довезли в кратчайшие сроки, подняли на этаж!</p>
+                </div>
+                <div class="col-3 box1">
+                    <p class="font-weight-bold mt-2">Инна Г. &nbsp;
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </p>
+                    <p>Осуществили переезд из Москвы в Екатеринбург.<br> Все супер! бережное отношение к вещам.</p>
+                </div>
+                <div class="col-sm-3 box1">
+                    <p class="font-weight-bold mt-2">Максим Е. &nbsp;
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </p>
+                    <p>Привезли Питбайк! Доволен!<br>
+                        Быстро, надежно! </p>
+                </div>
+            </div>
+            <div class="reviews-row">
+                <div class="col-md-3 box1">
+                    <p class="font-weight-bold mt-2">Елена С. &nbsp;
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </p>
+                    <p>Привезли груз в срок, но менеджер озвучила <br>
+                        иную сумму, без стоимости загрузки!</p>
+                </div>
+                <div class="col-md-5 box1">
+                    <p class="font-weight-bold mt-2">Игорь А. &nbsp;
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </p>
+                    <p>Обратился в компанию Global logistic из-за задержки доставки груза, груз потерялся в Самаре!
+                        Евгения, спасибо ей огромное, вовремя включилась в работу, помогла оперативно найти груз и
+                        организовать отправку по нужному адресу! Благодаря таким сотрудникам, хочется обращаться в
+                        компанию Global logistic!</p>
+                </div>
+            </div>
+        </div>
+        <!---reviews end-->
+
+        <!---Contacts start-->
+        <div class="container" id="contact">
+            <h2 class="text-center mt-5 mb-3">Наши контакты</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Офис в г.Москве:</h4>
+                    <p>г. Москва, ул. Профсоюзная, д. 152, стр. 4</p>
+                    <h4>Режим работы:</h4>
+                    <p>пн-пт: 08:00-20:00</p>
+                    <p>сб-вс: выходные дни</p>
+                    <h4>Телефон:</h4>
+                    <p><a href="tel:+74952342324">+7 (495) 234-23-24</a></p>
+                    <h4>Email:</h4>
+                    <p><a href="mailto:logisticafu@mail.ru">logisticafu@mail.ru</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Склад в г.Москве:</h4>
+                    <p>г. Москва, поселение Краснопахорское, квартал № 171, 55А</p>
+                    <h4>Режим работы:</h4>
+                    <p>Круглосуточно</p>
+                    <h4>Телефон:</h4>
+                    <p><a href="tel:+74952344243">+7 (495) 234-43-42</a></p>
+                    <h4>Email:</h4>
+                    <p><a href="mailto:logisticafukp@mail.ru">logisticafukp@mail.ru</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Офис в г. Чебоксары</h4>
+                    <p>г. Чебоксары, ул. Социалистическая, д. 9, к. 1</p>
+                    <h4>Режим работы:</h4>
+                    <p>пн-пт: 08:00-18:00</p>
+                    <p>сб-вс: выходные дни</p>
+                    <h4>Телефон:</h4>
+                    <p><a href="tel:+78352366336">+7 (835) 236-63-36</a></p>
+                    <h4>Email:</h4>
+                    <p><a href="mailto:logisticafu.che@mail.ru">logisticafu.che@mail.ru</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-12">
+                <script type="text/javascript" charset="utf-8" async
+                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acd3d8ac7b5ef24c8ca3cf767d4f86b7333775a935feefbca841c5495e234812d&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+        </div>
+    </main>
+    <!---Contacts end-->
+
+    <!---footer start-->
+    <footer class="footer" style=" background-color: rgb(60, 61, 77)" ;>
+        <div class="container-fluid py-3 footer mt-3" ;>
+            <div class="col-md-2 p-4">
+                <a class="footer_logo" href="/project/">
+                    <img src="img/GLlogo.png" alt="" height="80px" width="100px" mt-5>
+            </div>
+            <div class="col-md-7 mt-5 text-center">
+                “Global Logistic” © 2023&#8209;2023 Москва | <a
+                    href="/project/privacy.html">Политика&nbsp;конфиденциальности</a>
+            </div>
+            <div class="col-md-3 mt-3 text-center">
+                <h4>Связь с нами</h4>
+                <ul style="column-count: 2;">
+                    <li><a target="_blank" href="https://vk.com/">
+                            <i class="fa-brands fa-vk"></i>Вконтакте</a>
+                    </li>
+                    <li><a target="_blank" href="https://telegram.com/">
+                            <i class="fa-brands fa-telegram"></i>Telegram</a>
+                    </li>
+                </ul>
+                <p class="mail"><a href="mailto:logisticafu@mail.ru">logisticafu@mail.ru</a></p>
+            </div>
+        </div>
+    </footer>
+    <!---footer end-->
+    <script>
+
+        async function sendForm(form) {
+            let response = await fetch("php/con_obr.php", {
+                method: "POST",
+                body: new FormData(form),
+            });
+
+            let result = await response.text();
+            if (result == "ok") {
+                alert("Спасибо за обращение, мы обязательно свяжемся с Вами в течение часа!");
+            } else if (result == "exist") {
+                alert("Спасибо, что снова с нами, ожидайте звонка!");
+            }
+        }
+
+        function alphaOnly(event) {
+            let key = event.keyCode; return ((key >= 65 && key <= 90) || key == 8 || key == 32);
+        }
+
+        let btn = document.getElementById("btn");
+        let result = document.getElementById("result");
+        let weight = document.getElementById("weight");
+        let volume = document.getElementById("volume");
+        let load = document.getElementById("load");
+        let delivery = document.getElementById("delivery");
+        let danger = document.getElementById("danger");
+        let range = document.getElementById("range");
+        let distant = document.querySelector('.distant').innerHTML = 500;
+
+        let kg = 9;
+        let kub = 1000;
+        let km = 15;
+
+        range.onchange = function () {
+            let distant = document.querySelector('.distant').innerHTML = range.value;
+        };
+        btn.onclick = function () {
+
+            if (weight.value != '' && volume.value != '') {
+                if (load.checked) {
+                    load.value = 2000;
+                }
+                else {
+                    load.value = 0;
+                }
+                if (delivery.checked) {
+                    delivery.value = 1500;
+                }
+                else {
+                    delivery.value = 0;
+                }
+                if (danger.checked) {
+                    danger.value = 2000;
+                }
+                else {
+                    danger.value = 0;
+                }
+
+                let sum = (weight.value * kg) + (volume.value * kub) + Number(load.value)
+                    + Number(delivery.value) + Number(danger.value) + (range.value * km);
+                // проверка на числовое значение
+                if (isNaN(sum)) {
+                    alert('Введите числовое значение');
+                } else {
+                    result.innerHTML = sum;
+                }
+            } else {
+                alert('Введите вес и объем груза');
+            }
+        };
+    </script>
+
+    <script src="/project/jquery-3.7.0.min.js"></script>
+    <script src="/project/index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
