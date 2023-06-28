@@ -156,30 +156,10 @@
             color: #aad436;
         }
 
-        .modal-popup {
-            background-color: rgb(102, 173, 231);
-            margin: center;
-            margin-top: 3rem;
-            margin-left: 25rem;
-            min-width: 250px;
-            max-width: 250px;
+        #myModal,
+        #myMod {
+            opacity: 0.8;
             position: fixed;
-            padding: 15px 15px;
-            display: none;
-            border-radius: 20px;
-            text-align: center;
-            z-index: 7;
-            opacity: 0.9;
-        }
-
-        .popup-close {
-            font-size: 1rem;
-            position: relative;
-            right: 1px;
-        }
-
-        #mod {
-            display: none;
         }
     </style>
 </head>
@@ -187,7 +167,7 @@
 <body>
     <!---Header start-->
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: rgb(60, 61, 77);">
+        <nav class="navbar navbar-expand-sm" style="background-color: rgb(60, 61, 77);">
             <a class="navbar-brand" href="/project/"><img src="img/GLlogo.png" alt="" height="60px" width="80px"
                     mt-5></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -357,18 +337,37 @@
                     </div>
                     <p id="info" style="color: rgb(136, 85, 44); padding-left: 2.5rem;"></p>
                     <input type="submit" value="Получить обратную связь"
-                        class="btn modal-btn btn-block main-form-btn btn-lg mt-2 p-1">
+                        class="btn modal-btn btn-block main-form-btn btn-lg mt-2 p-1" data-toggle="modal">
                 </form>
             </div>
         </div>
         <!----About Company end -->
 
         <!-- --modal start-->
-        <div class="popup-overlay"></div>
-        <div class="modal-popup" id="#mod">
-            <h2>Спасибо за обращение!</h2>
-            <p>Мы обязательно свяжемся с Вами в течение часа!</p>
-            <a href="#modal-close" class="popup-close">&times;</a>
+        <div class="modal ml-auto" tabindex="-1" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="text-center text-primary">Спасибо за обращение, мы обязательно свяжемся с Вами в
+                            течение часа!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal ml auto" tabindex="-1" id="myMod">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="text-center text-primary">Спасибо, что снова с нами, ожидайте звонка!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <!----modal end -->
 
@@ -422,7 +421,6 @@
         <!---advantages end-->
 
         <!----card start-->
-        <!-- <p class="text-center">Дополнительные услуги "Global logistic":</p> -->
         <div class="card-group">
             <div class="card text-center">
                 <div class="image2 mb-4">
@@ -589,7 +587,7 @@
         <div class="container mt-4" id="reviews">
             <h2 class="text-center">Что говорят наши клиенты</h2>
             <div class="reviews-row mt-4 mb-4">
-                <div class="col-3 box1">
+                <div class="col-md-3 box1">
                     <p class="font-weight-bold mt-2">Олег Ш. &nbsp;
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -599,7 +597,7 @@
                     </p>
                     <p>Заказывал доставку мебели.<br> Остался доволен, довезли в кратчайшие сроки, подняли на этаж!</p>
                 </div>
-                <div class="col-3 box1">
+                <div class="col-md-3 box1">
                     <p class="font-weight-bold mt-2">Инна Г. &nbsp;
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -609,7 +607,7 @@
                     </p>
                     <p>Осуществили переезд из Москвы в Екатеринбург.<br> Все супер! бережное отношение к вещам.</p>
                 </div>
-                <div class="col-sm-3 box1">
+                <div class="col-md-3 box1">
                     <p class="font-weight-bold mt-2">Максим Е. &nbsp;
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -724,7 +722,6 @@
     </footer>
     <!---footer end-->
     <script>
-
         async function sendForm(form) {
             let response = await fetch("php/con_obr.php", {
                 method: "POST",
@@ -733,11 +730,12 @@
 
             let result = await response.text();
             if (result == "ok") {
-                alert("Спасибо за обращение, мы обязательно свяжемся с Вами в течение часа!");
+                $('#myModal').modal('show');
             } else if (result == "exist") {
-                alert("Спасибо, что снова с нами, ожидайте звонка!");
+                $('#myMod').modal('show');
             }
         }
+
 
         function alphaOnly(event) {
             let key = event.keyCode; return ((key >= 65 && key <= 90) || key == 8 || key == 32);
@@ -794,11 +792,9 @@
                 alert('Введите вес и объем груза');
             }
         };
+
+
     </script>
-
-    <script src="/project/jquery-3.7.0.min.js"></script>
-    <script src="/project/index.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
